@@ -1,0 +1,16 @@
+<% if logged_in? %>
+  <div class="container" >
+    <%= form_for [category, category.lessons.build] do |f| %>
+      <div class="row" style="padding: 10px">
+        <div class="row">
+          <h2><%= category.name %></h2>
+        </div>
+        <div class="row" >
+          <div class="col-md-offset-4 col-md-4">
+            <%= f.submit t("start"), class: "btn btn-primary" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>

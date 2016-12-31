@@ -1,0 +1,35 @@
+page_404_url: "public/404.html"
+per_page:
+  user: 30
+  category: 10
+  word: 5
+size_users_helpers: 80
+normal_avatar: 70
+size_word: 50
+user:
+  avatar:
+    avatar_default_size: 80
+  name:
+    maximum_length: 25
+  email:
+    minimum_length: 6
+    maximum_length: 50
+  password:
+    minimum_length: 6
+  page:
+    per_page: 5
+  size:
+    image: 5
+  word:
+    maximum: 30
+filter:
+  learned: learned
+  not_learned: not_learned
+  all: get_all
+answer_count: 1
+learned: "learned"
+lesson_time: 1
+minute: "00"
+second: "30"
+word:
+  quantity: 5

@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <div class="row text-center">
+    <h1><%= @lesson.category.name %></h1>
+  </div>
+</div>
+<div class="container text-center">
+  <h3><%= t "your_score"%>
+    <span class="text-red">
+      <%= @results.choosen_word_correct.count %><%= t "five" %>
+    </span>
+  </h3>
+  <label class="button-inline">
+    <%= button_to t("end_lesson"), categories_path, :class => "btn btn-lg btn-primary", method: :get %>
+  </label>
+</div>
