@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes user_params
-      flash[:success] = t "success"
+      flash[:success] = t "update_success"
       redirect_to @user
     else
       render :edit

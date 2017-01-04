@@ -1,6 +1,7 @@
 class LessonsController < ApplicationController
   before_action :logged_in_user
   before_action :init_lesson, only: [:show, :edit, :update]
+  before_action :load_category, only: :create
 
   def show
     @results = @lesson.results
@@ -39,6 +40,14 @@ class LessonsController < ApplicationController
     unless @lesson
       flash[:danger] = t "created_lesson_fails"
       redirect_to categories_path
+    end
+  end
+
+  def load_category
+    category = Category.find_by id: params[:category_id]
+    unless category
+      flash[:danger] = t "user_load_fails_category"
+      redirect_to new_admin_word_path
     end
   end
 end

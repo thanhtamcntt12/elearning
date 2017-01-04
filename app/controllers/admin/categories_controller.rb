@@ -29,7 +29,7 @@ class Admin::CategoriesController < ApplicationController
   def update
     if @category.update_attributes category_params
       flash[:success] = t "updated_category"
-      redirect_to admin_category_path
+      redirect_to admin_categories_path
     else
       flash[:danger] = t "update_category_fail"
       render :edit

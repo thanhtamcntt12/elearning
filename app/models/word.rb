@@ -22,4 +22,14 @@ class Word < ApplicationRecord
   end
   scope :get_all, ->current_user_id{}
   scope :random, ->{order("RANDOM()").limit(Settings.word.quantity).map(&:id)}
+
+  validate :check_meaning_nil
+
+  private
+  def check_meaning_nil
+    correct_meaning =
+      meanings.select{|meanings|meanings.is_correct? && !meanings.marked_for_destruction?}
+    errors.add :correct_meaning,
+      I18n.t("error.meaning_nil") if correct_meaning.empty?
+  end
 end
